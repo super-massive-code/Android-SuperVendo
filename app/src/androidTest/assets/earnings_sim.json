@@ -1,0 +1,254 @@
+[
+  {
+    "date": "2025-06-15T00:00:00",
+    "earningsTotal": 165,
+    "dwellLocations": [
+      {
+        "startTimestamp": "2025-06-15T08:53:00",
+        "endTimestamp": "2025-06-15T09:47:00",
+        "latitude": 40.715475,
+        "longitude": -74.001225
+      },
+      {
+        "startTimestamp": "2025-06-15T10:24:00",
+        "endTimestamp": "2025-06-15T11:37:00",
+        "latitude": 40.722816,
+        "longitude": -74.003196
+      },
+      {
+        "startTimestamp": "2025-06-15T13:14:00",
+        "endTimestamp": "2025-06-15T14:18:00",
+        "latitude": 40.719724,
+        "longitude": -74.005107
+      },
+      {
+        "startTimestamp": "2025-06-15T15:34:00",
+        "endTimestamp": "2025-06-15T16:19:00",
+        "latitude": 40.71515,
+        "longitude": -74.007768
+      },
+      {
+        "startTimestamp": "2025-06-15T17:57:00",
+        "endTimestamp": "2025-06-15T18:44:00",
+        "latitude": 40.71722,
+        "longitude": -74.00034
+      }
+    ]
+  },
+  {
+    "date": "2025-06-16T00:00:00",
+    "earningsTotal": 154,
+    "dwellLocations": [
+      {
+        "startTimestamp": "2025-06-16T08:50:00",
+        "endTimestamp": "2025-06-16T09:57:00",
+        "latitude": 40.715297,
+        "longitude": -74.00179
+      },
+      {
+        "startTimestamp": "2025-06-16T11:03:00",
+        "endTimestamp": "2025-06-16T11:49:00",
+        "latitude": 40.72029,
+        "longitude": -74.000818
+      },
+      {
+        "startTimestamp": "2025-06-16T13:08:00",
+        "endTimestamp": "2025-06-16T14:16:00",
+        "latitude": 40.71809,
+        "longitude": -74.00472
+      },
+      {
+        "startTimestamp": "2025-06-16T15:13:00",
+        "endTimestamp": "2025-06-16T16:12:00",
+        "latitude": 40.712444,
+        "longitude": -74.006905
+      },
+      {
+        "startTimestamp": "2025-06-16T17:26:00",
+        "endTimestamp": "2025-06-16T18:19:00",
+        "latitude": 40.720496,
+        "longitude": -74.000254
+      }
+    ]
+  },
+  {
+    "date": "2025-06-17T00:00:00",
+    "earningsTotal": 117,
+    "dwellLocations": [
+      {
+        "startTimestamp": "2025-06-17T08:43:00",
+        "endTimestamp": "2025-06-17T09:35:00",
+        "latitude": 40.714982,
+        "longitude": -74.001351
+      },
+      {
+        "startTimestamp": "2025-06-17T10:49:00",
+        "endTimestamp": "2025-06-17T11:58:00",
+        "latitude": 40.721413,
+        "longitude": -74.003368
+      },
+      {
+        "startTimestamp": "2025-06-17T13:26:00",
+        "endTimestamp": "2025-06-17T14:28:00",
+        "latitude": 40.720255,
+        "longitude": -74.004166
+      },
+      {
+        "startTimestamp": "2025-06-17T15:48:00",
+        "endTimestamp": "2025-06-17T16:53:00",
+        "latitude": 40.712633,
+        "longitude": -74.006412
+      },
+      {
+        "startTimestamp": "2025-06-17T17:50:00",
+        "endTimestamp": "2025-06-17T18:37:00",
+        "latitude": 40.720805,
+        "longitude": -74.000195
+      }
+    ]
+  },
+  {
+    "date": "2025-06-18T00:00:00",
+    "earningsTotal": 193,
+    "dwellLocations": [
+      {
+        "startTimestamp": "2025-06-18T08:07:00",
+        "endTimestamp": "2025-06-18T09:14:00",
+        "latitude": 40.715448,
+        "longitude": -74.000317
+      },
+      {
+        "startTimestamp": "2025-06-18T10:20:00",
+        "endTimestamp": "2025-06-18T11:15:00",
+        "latitude": 40.722136,
+        "longitude": -74.002297
+      },
+      {
+        "startTimestamp": "2025-06-18T12:30:00",
+        "endTimestamp": "2025-06-18T13:37:00",
+        "latitude": 40.720466,
+        "longitude": -74.003944
+      },
+      {
+        "startTimestamp": "2025-06-18T14:58:00",
+        "endTimestamp": "2025-06-18T15:46:00",
+        "latitude": 40.713129,
+        "longitude": -74.007584
+      },
+      {
+        "startTimestamp": "2025-06-18T16:39:00",
+        "endTimestamp": "2025-06-18T17:27:00",
+        "latitude": 40.71811,
+        "longitude": -74.000134
+      }
+    ]
+  },
+  {
+    "date": "2025-06-19T00:00:00",
+    "earningsTotal": 141,
+    "dwellLocations": [
+      {
+        "startTimestamp": "2025-06-19T08:13:00",
+        "endTimestamp": "2025-06-19T09:28:00",
+        "latitude": 40.715162,
+        "longitude": -74.001927
+      },
+      {
+        "startTimestamp": "2025-06-19T10:53:00",
+        "endTimestamp": "2025-06-19T11:58:00",
+        "latitude": 40.719402,
+        "longitude": -74.001621
+      },
+      {
+        "startTimestamp": "2025-06-19T12:41:00",
+        "endTimestamp": "2025-06-19T13:51:00",
+        "latitude": 40.719687,
+        "longitude": -74.004251
+      },
+      {
+        "startTimestamp": "2025-06-19T15:21:00",
+        "endTimestamp": "2025-06-19T16:25:00",
+        "latitude": 40.712302,
+        "longitude": -74.0081
+      },
+      {
+        "startTimestamp": "2025-06-19T17:05:00",
+        "endTimestamp": "2025-06-19T18:00:00",
+        "latitude": 40.718212,
+        "longitude": -74.000145
+      }
+    ]
+  },
+  {
+    "date": "2025-06-20T00:00:00",
+    "earningsTotal": 171,
+    "dwellLocations": [
+      {
+        "startTimestamp": "2025-06-20T08:34:00",
+        "endTimestamp": "2025-06-20T09:39:00",
+        "latitude": 40.715071,
+        "longitude": -74.001684
+      },
+      {
+        "startTimestamp": "2025-06-20T10:51:00",
+        "endTimestamp": "2025-06-20T11:59:00",
+        "latitude": 40.720911,
+        "longitude": -74.002835
+      },
+      {
+        "startTimestamp": "2025-06-20T13:20:00",
+        "endTimestamp": "2025-06-20T14:12:00",
+        "latitude": 40.719036,
+        "longitude": -74.005466
+      },
+      {
+        "startTimestamp": "2025-06-20T15:44:00",
+        "endTimestamp": "2025-06-20T16:42:00",
+        "latitude": 40.713619,
+        "longitude": -74.007561
+      },
+      {
+        "startTimestamp": "2025-06-20T17:48:00",
+        "endTimestamp": "2025-06-20T18:45:00",
+        "latitude": 40.718491,
+        "longitude": -74.001002
+      }
+    ]
+  },
+  {
+    "date": "2025-06-21T00:00:00",
+    "earningsTotal": 120,
+    "dwellLocations": [
+      {
+        "startTimestamp": "2025-06-21T08:10:00",
+        "endTimestamp": "2025-06-21T09:06:00",
+        "latitude": 40.716336,
+        "longitude": -74.000967
+      },
+      {
+        "startTimestamp": "2025-06-21T10:32:00",
+        "endTimestamp": "2025-06-21T11:46:00",
+        "latitude": 40.720385,
+        "longitude": -74.001774
+      },
+      {
+        "startTimestamp": "2025-06-21T12:53:00",
+        "endTimestamp": "2025-06-21T13:49:00",
+        "latitude": 40.719359,
+        "longitude": -74.004843
+      },
+      {
+        "startTimestamp": "2025-06-21T15:20:00",
+        "endTimestamp": "2025-06-21T16:02:00",
+        "latitude": 40.712836,
+        "longitude": -74.007031
+      },
+      {
+        "startTimestamp": "2025-06-21T17:20:00",
+        "endTimestamp": "2025-06-21T18:18:00",
+        "latitude": 40.718191,
+        "longitude": -74.000974
+      }
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 package com.supermassivecode.supervendo
 
-import com.supermassivecode.supervendo.data.DwellDetection
-import com.supermassivecode.supervendo.data.GpsPoint
+import com.supermassivecode.supervendo.data.analysis.DwellDetection
+import com.supermassivecode.supervendo.data.room.GpsPoint
 import junit.framework.TestCase.assertFalse
 import junit.framework.TestCase.assertTrue
 import org.junit.Test

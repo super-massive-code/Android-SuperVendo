@@ -1,4 +1,4 @@
-package com.supermassivecode.supervendo.data
+package com.supermassivecode.supervendo.data.room
 
 import android.content.Context
 import androidx.room.Database
@@ -10,7 +10,7 @@ import androidx.room.TypeConverters
     entities = [
         GpsPoint::class,
         DwellLocation::class,
-        Earnings::class
+        Day::class
     ],
     version = 1
 )
@@ -19,7 +19,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun gpsDao(): GpsDao
     abstract fun dwellDao(): DwellDao
-    abstract fun earningsDao(): EarningsDao
+    abstract fun dayDao(): DayDao
 
     companion object {
 

@@ -1,5 +1,6 @@
-package com.supermassivecode.supervendo.data
+package com.supermassivecode.supervendo.data.analysis
 
+import com.supermassivecode.supervendo.data.room.GpsPoint
 import java.time.Duration
 import kotlin.math.atan2
 import kotlin.math.cos

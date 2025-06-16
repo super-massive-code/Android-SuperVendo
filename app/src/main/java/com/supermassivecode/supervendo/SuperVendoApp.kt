@@ -1,7 +1,7 @@
 package com.supermassivecode.supervendo
 
 import android.app.Application
-import com.supermassivecode.supervendo.data.AppDatabase
+import com.supermassivecode.supervendo.data.room.AppDatabase
 
 class SuperVendoApp: Application() {
 

@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.kotlin.serialization)
+}
+
+ksp {
+    arg("verbose", "true")
 }
 
 android {
@@ -47,8 +52,9 @@ android {
 dependencies {
 
     implementation(libs.androidx.room.runtime.v271)
+    implementation(libs.core.ktx)
+    implementation(libs.androidx.junit.ktx)
     annotationProcessor(libs.androidx.room.compiler.v271)
-
     ksp(libs.androidx.room.compiler.v271)
 
     implementation(libs.play.services.location)
@@ -59,8 +65,12 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.kotlinx.serialization.json.v173)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation (libs.androidx.core.testing)
+    androidTestImplementation (libs.androidx.core)
+    androidTestImplementation (libs.androidx.runner)
 }

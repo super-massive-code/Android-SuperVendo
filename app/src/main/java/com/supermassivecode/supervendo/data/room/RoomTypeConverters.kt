@@ -1,4 +1,4 @@
-package com.supermassivecode.supervendo.data
+package com.supermassivecode.supervendo.data.room
 
 import androidx.room.TypeConverter
 import java.time.LocalDateTime
