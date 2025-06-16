@@ -2,11 +2,6 @@ package com.supermassivecode.supervendo.data.analysis
 
 import com.supermassivecode.supervendo.data.room.GpsPoint
 import java.time.Duration
-import kotlin.math.atan2
-import kotlin.math.cos
-import kotlin.math.pow
-import kotlin.math.sin
-import kotlin.math.sqrt
 
 class DwellDetection {
 
@@ -15,7 +10,6 @@ class DwellDetection {
         private const val SPEED_THRESHOLD_MPS = 1.0
         private const val DWELL_RADIUS_METERS = 25.0
         private const val DWELL_TIME_MINUTES = 10L
-        private const val EARTH_RADIUS_METERS = 6371000.0
 
         fun isDwelling(points: List<GpsPoint>): Boolean {
             if (points.size < 2) return true
@@ -32,26 +26,11 @@ class DwellDetection {
 
             val centerLat = points.map { it.latitude }.average()
             val centerLon = points.map { it.longitude }.average()
-            val centerPoint = GpsPoint(latitude = centerLat, longitude = centerLon, speed = 0.0f)
+            val centerPoint = LatLon(latitude = centerLat, longitude = centerLon)
 
-            val maxDistanceFromCenter = points.maxOf { haversine(it, centerPoint) }
+            val maxDistanceFromCenter = points.map { LatLon(it.latitude, it.longitude) }.maxOf { Utils.haversineDistance(it, centerPoint) }
 
             return maxDistanceFromCenter < DWELL_RADIUS_METERS
-        }
-
-        private fun haversine(p1: GpsPoint, p2: GpsPoint): Double {
-            val lat1 = Math.toRadians(p1.latitude)
-            val lat2 = Math.toRadians(p2.latitude)
-            val deltaLat = Math.toRadians(p2.latitude - p1.latitude)
-            val deltaLon = Math.toRadians(p2.longitude - p1.longitude)
-
-            val a = sin(deltaLat / 2).pow(2) +
-                    cos(lat1) * cos(lat2) *
-                    sin(deltaLon / 2).pow(2)
-
-            val c = 2 * atan2(sqrt(a), sqrt(1 - a))
-
-            return EARTH_RADIUS_METERS * c
         }
     }
 }
