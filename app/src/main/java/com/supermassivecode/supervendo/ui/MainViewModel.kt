@@ -48,7 +48,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                         .now()
                         .format(DateTimeFormatter.ofPattern("EEEE, MMM d"))
                 )
-                _earningsToday.postValue("Earnings: ${day.earningsTotal}")
+                _earningsToday.postValue("${day.earningsTotal}")
                 _dwellLocations.postValue(uiList)
             }
         }

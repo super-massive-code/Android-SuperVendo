@@ -32,7 +32,7 @@ class MainActivity : ComponentActivity() {
 
         viewModel.dwellLocations.observe(this) { dwellList ->
             adapter.updateData(dwellList)
-            locationsText.text = "Locations Visited: ${dwellList.size}"
+            locationsText.text = "${dwellList.size}"
         }
 
         viewModel.earningsToday.observe(this) { totalText ->
@@ -40,7 +40,7 @@ class MainActivity : ComponentActivity() {
         }
 
         viewModel.todayDate.observe(this) { dateStr ->
-            dateText.text = "Date: $dateStr"
+            dateText.text = dateStr
         }
     }
 }
