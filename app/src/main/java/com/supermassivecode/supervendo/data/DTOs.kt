@@ -4,7 +4,7 @@ import java.time.LocalDateTime
 
 data class DayDTO(
     val timestamp: LocalDateTime,
-    val earningsTotal: Long,
+    val earningsTotal: Long?,
     val dwellLocations: List<DwellLocationDTO>
 )
 

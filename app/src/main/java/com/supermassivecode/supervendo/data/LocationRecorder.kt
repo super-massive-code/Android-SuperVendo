@@ -3,31 +3,22 @@ package com.supermassivecode.supervendo.data
 import android.content.Context
 import com.supermassivecode.supervendo.data.analysis.DwellDetection
 import com.supermassivecode.supervendo.data.room.AppDatabase
-import com.supermassivecode.supervendo.data.room.DwellLocation
 import com.supermassivecode.supervendo.data.room.Day
-import com.supermassivecode.supervendo.data.room.GpsPoint
+import com.supermassivecode.supervendo.data.room.DwellLocation
 
-class TrackingController(context: Context) {
+class LocationRecorder(context: Context) {
 
     private val db = AppDatabase.getInstance(context)
     private val gpsDao = db.gpsDao()
-    private val dwellDao = db.dwellDao()
     private val dayDao = db.dayDao()
+    private val dwellDao = db.dwellDao()
 
-    suspend fun insertGpsPoint(point: GpsPoint) {
-        gpsDao.insert(point)
+    suspend fun startTracking() {
+        //TODO: Implement location tracking logic here, setting up GPS, etc.
     }
 
-    suspend fun insertDwellLocation(location: DwellLocation) {
-        dwellDao.insert(location)
-    }
-
-    suspend fun insertEarnings(day: Day) {
-        dayDao.insert(day)
-    }
-
-    fun getAllDwellLocations() = dwellDao.getAll()
-    fun getAllDays() = dayDao.getAll()
+    //TODO: acquire GPS and insert every x seconds/minutes
+    //TODO: at time interval detect dwell and insert into database
 
     suspend fun detectAndInsertDwell() {
         val dayId = dayDao.insert(Day())

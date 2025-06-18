@@ -32,6 +32,10 @@ class LocationRecommender {
         val locationGroups = mutableListOf<LocationGroup>()
 
         for (day in days) {
+            if (day.earningsTotal == null) {
+                continue
+            }
+
             val earningsPerLocation = day.earningsTotal / maxOf(day.dwellLocations.size, 1)
 
             for (dwell in day.dwellLocations) {

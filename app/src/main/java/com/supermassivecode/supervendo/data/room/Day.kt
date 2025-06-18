@@ -35,6 +35,9 @@ interface DayDao {
     @Query("SELECT * FROM Day ORDER BY timestamp DESC")
     fun getAll(): List<Day>
 
+    @Query("SELECT * FROM Day WHERE timestamp BETWEEN :start AND :end LIMIT 1")
+    suspend fun getDay(start: LocalDateTime, end: LocalDateTime): Day?
+
     @Transaction
     @Query("SELECT * FROM Day WHERE id = :id")
     suspend fun getDayWithDwellLocations(id: Int): DayWithDwellLocations
