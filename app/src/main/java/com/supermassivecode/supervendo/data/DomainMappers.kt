@@ -7,7 +7,9 @@ fun DayWithDwellLocations.toDto(): DayDTO {
     return DayDTO(
         timestamp = day.timestamp,
         earningsTotal = day.totalEarnings,
-        dwellLocations = dwellLocations.map { it.toDto() }
+        dwellLocations = dwellLocations
+            .sortedByDescending { it.endTimestamp }
+            .map { it.toDto() }
     )
 }
 
