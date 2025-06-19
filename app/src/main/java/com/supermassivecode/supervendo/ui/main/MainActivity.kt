@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        adapter = DwellLocationAdapter(emptyList())
+        adapter = DwellLocationAdapter()
 
         val recyclerView = findViewById<RecyclerView>(R.id.dwellRecyclerView).apply {
             layoutManager = LinearLayoutManager(this@MainActivity)
@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
         val dateText = findViewById<TextView>(R.id.dateText)
 
         viewModel.dwellLocations.observe(this) { dwellList ->
-            adapter.updateData(dwellList)
+            adapter.submitList(dwellList)
             locationsText.text = "${dwellList.size}"
         }
 

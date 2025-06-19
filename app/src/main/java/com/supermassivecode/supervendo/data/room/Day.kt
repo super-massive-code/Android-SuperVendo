@@ -8,6 +8,7 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 import androidx.room.Relation
 import androidx.room.Transaction
+import kotlinx.coroutines.flow.Flow
 import java.time.LocalDateTime
 
 @Entity
@@ -41,6 +42,10 @@ interface DayDao {
     @Transaction
     @Query("SELECT * FROM Day WHERE id = :id")
     suspend fun getDayWithDwellLocations(id: Int): DayWithDwellLocations
+
+    @Transaction
+    @Query("SELECT * FROM Day WHERE id = :id")
+    fun getDayWithDwellLocationsAsFlow(id: Int): Flow<DayWithDwellLocations>
 
     @Query("UPDATE Day SET totalEarnings = :total WHERE id = :dayId")
     suspend fun updateTotalEarnings(dayId: Int, total: Long)

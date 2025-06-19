@@ -10,7 +10,10 @@ import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.location.Priority
+import com.supermassivecode.supervendo.data.DayDataReader
+import com.supermassivecode.supervendo.data.analysis.DwellDetection
 import com.supermassivecode.supervendo.data.room.AppDatabase
+import com.supermassivecode.supervendo.data.room.DwellLocation
 import com.supermassivecode.supervendo.data.room.GpsPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +23,9 @@ import java.time.LocalDateTime
 class LocationRecorder(context: Context) {
 
     private val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
-    private val gpsDao = AppDatabase.getInstance(context).gpsDao()
+    private val db = AppDatabase.getInstance(context)
+    private val gpsDao = db.gpsDao()
+    private val dwellDao = db.dwellDao()
 
     private val locationRequest = LocationRequest.Builder(
         Priority.PRIORITY_HIGH_ACCURACY,
@@ -38,10 +43,22 @@ class LocationRecorder(context: Context) {
                     longitude = location.longitude,
                     speed = location.speed
                 )
-                Log.d("LocationRecorder", "Recording location: $gpsPoint")
 
                 CoroutineScope(Dispatchers.IO).launch {
+                    Log.d("LocationRecorder", "Inserting location: $gpsPoint")
                     gpsDao.insert(gpsPoint)
+                    if (DwellDetection.isDwelling(gpsDao.getLastPoints(10))) {
+                        val dayId = DayDataReader(context).getCurrentDayId()
+                        val dwellLocation = DwellLocation(
+                            dayId = dayId,
+                            startTimestamp = gpsPoint.timestamp,
+                            endTimestamp = gpsPoint.timestamp,
+                            latitude = gpsPoint.latitude,
+                            longitude = gpsPoint.longitude
+                        )
+                        Log.d("LocationRecorder", "Inserting Dwell $dwellLocation")
+                        dwellDao.insert(dwellLocation)
+                    }
                 }
             }
         }

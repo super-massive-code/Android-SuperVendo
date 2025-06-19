@@ -1,9 +1,11 @@
 package com.supermassivecode.supervendo.ui.main
 
-import android.annotation.SuppressLint
 import android.app.Application
-import androidx.lifecycle.*
-import com.supermassivecode.supervendo.data.DataRepo
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.supermassivecode.supervendo.data.DayDataReader
 import com.supermassivecode.supervendo.data.room.DatabaseSeeder
 import kotlinx.coroutines.launch
 import java.time.Duration
@@ -13,7 +15,7 @@ import java.time.format.DateTimeFormatter
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repo = DataRepo(application)
+    private val repo = DayDataReader(application)
 
     private val _dwellLocations = MutableLiveData<List<DwellLocationUiModel>>()
     val dwellLocations: LiveData<List<DwellLocationUiModel>> = _dwellLocations
@@ -25,31 +27,33 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val todayDate: LiveData<String> = _todayDate
 
     init {
-        loadTodaySummary()
+        observeTodaySummary()
     }
 
-    @SuppressLint("DefaultLocale")
-    private fun loadTodaySummary() {
+    private fun observeTodaySummary() {
         viewModelScope.launch {
-            DatabaseSeeder(application.applicationContext).seedDatabase()
-            repo.getInfoForDay(LocalDateTime.now())?.let { day ->
-                val uiList = day.dwellLocations.map { location ->
-                    val duration = Duration.between(location.startTimestamp, location.endTimestamp).toMinutes()
-                    DwellLocationUiModel(
-                        locationLabel = formatLatLng(location.latitude, location.longitude),
-                        durationMinutes = duration,
-                        startTime = location.startTimestamp,
-                        endTime = location.endTimestamp
-                    )
-                }
+            DatabaseSeeder(getApplication()).seedDatabase()
+            //TODO: how would we handle overlap of midnight... we would need to re-trigger this
+            repo.getCurrentDayFlow().collect { day ->
+                day?.let {
+                    val uiList = it.dwellLocations.map { location ->
+                        val duration = Duration.between(location.startTimestamp, location.endTimestamp).toMinutes()
+                        DwellLocationUiModel(
+                            locationLabel = formatLatLng(location.latitude, location.longitude),
+                            durationMinutes = duration,
+                            startTime = location.startTimestamp,
+                            endTime = location.endTimestamp
+                        )
+                    }
 
-                _todayDate.postValue(
-                    LocalDate
-                        .now()
-                        .format(DateTimeFormatter.ofPattern("EEEE, MMM d"))
-                )
-                _earningsToday.postValue("${day.earningsTotal}")
-                _dwellLocations.postValue(uiList)
+                    _todayDate.postValue(
+                        LocalDate
+                            .now()
+                            .format(DateTimeFormatter.ofPattern("EEEE, MMM d"))
+                    )
+                    _earningsToday.postValue("${it.earningsTotal}")
+                    _dwellLocations.postValue(uiList)
+                }
             }
         }
     }
