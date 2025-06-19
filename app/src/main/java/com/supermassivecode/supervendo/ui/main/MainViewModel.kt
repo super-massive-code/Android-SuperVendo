@@ -1,4 +1,4 @@
-package com.supermassivecode.supervendo.ui
+package com.supermassivecode.supervendo.ui.main
 
 import android.annotation.SuppressLint
 import android.app.Application

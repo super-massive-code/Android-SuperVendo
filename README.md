@@ -1,6 +1,11 @@
-# 📍 SuperVendo: Location-Based Earnings Recommender
+<h1>
+  <img src="app/src/main/assets/icon.png" width="96" alt="SuperVendo Icon"/><br/>
+  SuperVendo
+</h1>
 
-SuperVendo is an intelligent Kotlin-based system that analyzes GPS dwell locations and historical earnings data to **recommend profitable areas** for mobile workers, vendors, or location-based businesses.
+<p>
+SuperVendo is an intelligent Kotlin-based system that analyzes GPS dwell locations and historical earnings data to recommend profitable areas for mobile workers, vendors, or location-based businesses.
+</p>
 
 ---
 
